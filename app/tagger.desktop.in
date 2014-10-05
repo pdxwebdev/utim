@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Tagger
+Comment=Read and create QR code and barcode tags
+Exec=./tagger-wrapper
+Icon=graphics/tagger.svg
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
+
+
+

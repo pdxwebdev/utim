@@ -1,0 +1,15 @@
+{
+    "architecture": "@CLICK_ARCH@",
+    "description": "Read and create QR code and barcode tags.",
+    "framework": "ubuntu-sdk-14.10-dev2",
+    "hooks": {
+        "tagger": {
+            "apparmor": "tagger.apparmor",
+            "desktop": "tagger.desktop"
+        }
+    },
+    "maintainer": "Michael Zanetti <michael.zanetti@canonical.com>",
+    "name": "com.ubuntu.developer.mzanetti.tagger",
+    "title": "Tagger",
+    "version": "0.5.1.0"
+}
