@@ -5,7 +5,8 @@
     "hooks": {
         "tagger": {
             "apparmor": "tagger.apparmor",
-            "desktop": "tagger.desktop"
+            "desktop": "tagger.desktop",
+            "urls": "tagger.url-dispatcher"
         }
     },
     "maintainer": "Michael Zanetti <michael.zanetti@canonical.com>",

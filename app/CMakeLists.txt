@@ -9,6 +9,7 @@ set(tagger_SRCS
   qrcodereader.cpp
   qrcodegenerator.cpp
   qrcodeimageprovider.cpp
+  client.cpp
 )
 
 add_executable(tagger ${tagger_SRCS})

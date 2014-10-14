@@ -21,15 +21,29 @@
 #include "qrcodereader.h"
 #include "qrcodegenerator.h"
 #include "qrcodeimageprovider.h"
+#include "client.h"
 
+#include <unistd.h>
 #include <QGuiApplication>
 #include <QtQuick/QQuickView>
 #include <QtQml/QtQml>
+#include <QTcpSocket>
+#include <QHostAddress>
+#include <iostream>
 
 int main(int argc, char *argv[])
 {
-    QGuiApplication a(argc, argv);
+    std::cout << "Have " << argc << " arguments:" << std::endl;
+    for (int i = 0; i < argc; ++i) {
+        std::cout << argv[i] << std::endl;
+    }
 
+    Client c;
+    if (argc > 1) {
+	c.doConnect();
+    }
+
+    QGuiApplication a(argc, argv);
     QQuickView view;
 
     QRCodeReader reader;
@@ -46,3 +60,4 @@ int main(int argc, char *argv[])
 
     return a.exec();
 }
+

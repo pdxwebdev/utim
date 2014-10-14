@@ -146,7 +146,7 @@ MainView {
 
         Page {
             id: qrCodeReaderPage
-            title: qsTr("Scan code")
+            title: qsTr("Register / Sign In")
             signal codeParsed(string type, string text)
 
             property var aboutPopup: null
