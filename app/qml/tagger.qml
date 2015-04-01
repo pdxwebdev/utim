@@ -26,6 +26,7 @@ import QtMultimedia 5.0
 import QtQuick.Window 2.0
 import Ubuntu.Content 0.1
 import Tagger 0.1
+import Qt.WebSockets 1.0
 
 MainView {
     id: mainView
@@ -365,6 +366,13 @@ MainView {
                             pageStack.push(generateCodeComponent, {textData: resultsPage.text})
                         }
                     }
+		    Button {
+			width: parent.width
+			text: qsTr("Sign in")
+			onClicked: {
+			    webSocket.sendTextMessage(resultsPage.text)
+			}
+		    }
                 }
             }
         }
@@ -500,7 +508,14 @@ MainView {
             }
         }
     }
-
+    WebSocket {
+        id: webSocket
+        url: "ws://localhost:8901"
+        onTextMessageReceived: {
+            messageBox.text = messageBox.text + "\nReceived secure message: " + message
+        }
+        active: true
+    }
     // We must use Item element because Screen component does not work with QtObject
     Item {
         id: device
